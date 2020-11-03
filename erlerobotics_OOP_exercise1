@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+
+template <typename T>
+class A
+{
+    public:
+    virtual
+    T area(const T& i, const T& j)
+    {}
+    
+};
+
+template <typename T>
+class rectangle: public A<T>
+{
+  public:
+  virtual
+  T area(const T& i, const T& j)
+    {
+        cout<<i*j<<endl;
+        return i*j;
+    }
+  
+};
+
+template <typename T>
+class triangle : public A <T>
+{
+    public:
+    virtual
+    T area(const T& i, const T& j)
+    {
+        cout<<i*j/2<<endl;
+        return i*j/2;
+    }
+    
+};
+
+
+int main()
+{
+    float i;
+    float j;
+    i = 2.1;
+    j = 3.0;
+    
+    rectangle<float> r;
+    triangle<int> t;
+    
+    rectangle<float>* sum1 = &r;
+    triangle<int>* sum2 = &t;
+    
+    sum1->area(i,j);
+    
+    sum2->area(i,j);
+    
+    
+}
