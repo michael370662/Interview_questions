@@ -128,5 +128,6 @@ int main()
     
     delete WSB;
     delete YOLOFD;
+    delete [] stockpile;
     return 0;
 }
